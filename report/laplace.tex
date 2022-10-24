@@ -1,0 +1,139 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+
+\graphicspath{ {./images/} }
+
+\title{Matemática IV - Transformada de Laplace, uso en Ingeniería Mecánica}
+\author{
+    Juan Ignacio Agüero, Damián Adolfo Leguina y Paulina Antico
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Transformada de Laplace}
+
+Nombrada así en honor al matemático \emph{Pierre-Simon de Laplace} (1749-1827), es una transformada integral que convierte una función de una variable real, (usualmente \(t\)), al dominio algebraico \(s\).
+
+\subsection*{Formula}
+
+Establezcamos \(f(t)\) para \(0 \leq t \le \infty\) y \(s\) denotando una variable real arbitraria. La \emph{transformada de Laplace} de \(f(x)\) designada o bien por \(\mathcal{L}\{f(t)\}\) o bien \(F(s)\), es
+
+\begin{align*}
+    \mathcal{L}\{f(t)\}=\int_{t=0}^{\infty}e^{-st}f(t)dt
+\end{align*}
+
+\newpage
+
+\section{Transformada de Laplace Inversa}
+
+Es la función inversa a la Transformada de Laplace, representada componentes
+
+\begin{align*}
+    \mathcal{L}^{-1}\left[F\left(s\right)\right](t)
+\end{align*}
+
+La transformada inversa de Laplace permita transformar una función en el dominio algebraico al dominio real.
+
+\subsection*{Formula}
+
+Existen varias formulas para representar la transformada inversa de Laplace, una de ellas es la conocida como la Formula Inversa de Mellin, también llamada integral de Bromwich o integral de Fourier-Mellin:
+
+\begin{align*}
+    f\left(t\right) = \mathcal{L}^{-1} \left\{F\left(s\right)\right\} = \frac{1}{2\pi i} \lim_{T \to +\infty} \int_{\gamma - iT}^{{\gamma + iT}} e^{st} F \left(s\right) ds
+\end{align*}
+
+\newpage
+
+\section{Ingeniería Mecánica}
+
+La \emph{Ingeniería Mecánica} es una rama de la ingeniería que combina ingeniería física con matemática para poder diseñar, analizar, crear y mantener sistemas mecánicos.
+
+\subsection{relación con la transformada de Laplace}
+
+
+En la Ingeniería Mecánica, la \emph{transformada de Laplace} se usa para resolver ecuaciones diferenciales de un sistema mecánico para encontrar la función de transferencia\footnote{La \emph{función de transferencia} de un sistema es una función que modela la salida de un sistema para cada entrada posible.} de ese sistema.
+
+\subsection{Ejemplo: Tanque de agua}
+
+\includegraphics{tank}
+
+La imagen muestra un tanque de agua llenándose a un radio $f_{entrada}$, y se vacía a un radio $f_{salida}$, en el instante $t = 0$, el tanque esta vacío. Lo primero que podemos deducir de este sistema es que va a haber una tasa relacionando $f_{entrada}$ con $f_{salida}$, sí $f_e = f_s$, entonces la altura del agua acumulada $h$ permanece constante, si $f_e > f_s$, $h$ va a crecer, y $f_e < f_s$, $h$ decrece.
+
+\subsubsection*{Ecuación diferencial}
+
+En este caso, podemos asumir que el agua acumulada es el cambio del volumen del agua en el tiempo.
+
+\begin{align*}
+    f_e - f_s = \frac{\Delta V}{\Delta t}
+\end{align*}
+
+El volumen siendo el area $A$ por la altura, asumiendo que el area de la sección transversal es constante, la altura $h$ es la única variable en la función del volumen, por lo que la variación del volumen $\Delta V = A \times d h$, por lo que la ecuación diferencial queda en:
+
+\begin{align*}
+    f_e - f_s = \frac{A \times d h}{d t} = A \frac{d h}{d t}
+\end{align*}
+
+\subsubsection*{Flujo de salida}
+
+El flujo de salida esta dominado por la presión $p$ que ejerce el agua para salir por el tubo que funciona como una restricción $R$, por lo tanto $f_s = p/R$. La presión esta definida como $p = \rho gh$, donde $\rho$ es la densidad del agua, $h$ es la altura del cuerpo de agua en un moment $t$ y $g$ la aceleración de la gravedad, por lo tanto
+
+\begin{align*}
+    f_s = \frac{\rho gh}{R}
+\end{align*}
+
+Reemplazando en la ecuación diferencial se puede escribir como:
+
+\begin{align*}
+    f_e &- \frac{\rho gh}{R} = A \frac{dh}{dt}\\
+    \therefore f_e &= A \frac{dh}{dt} + \frac{\rho gh}{R}\\
+\end{align*}
+
+\subsubsection*{Aplicando Laplace}
+
+\begin{align*}
+    \mathcal{L}\left[f_e\right]\left(s\right) &= \mathcal{L}\left[A \frac{dh}{dt} + \frac{\rho gh}{R}\right]\left(s\right) \\
+    \therefore F_e\left(s\right) &= AsH\left(s\right) - \cancelto{0}{h\left(0\right)} + \frac{\rho g}{R}H\left(s\right) \\
+    \therefore F_e\left(s\right) &= AsH\left(s\right) + \frac{\rho g}{R}H\left(s\right) \\
+    \therefore \label{eq:3} F_e\left(s\right) &= \left[As + \frac{\rho g}{R}\right]H\left(s\right)
+\end{align*}
+
+\subsubsection*{Función de transferencia}
+
+La función transferencia $G(s)$ se determina con la expresión
+
+\begin{align*}
+    G\left(s\right) = \frac{Y\left(s\right)}{X\left(s\right)}
+\end{align*}
+
+Donde $X\left(s\right)$ es la entrada de un sistema e $Y\left(s\right)$ la salida.
+En nuestro sistema, es $F_e\left(s\right)$, la salida $H\left(s\right)$, por lo que tenemos que adaptar nuestra ecuación.
+\begin{align*}
+    F_e\left(s\right) &= \left[As + \frac{\rho g}{R}\right]H\left(s\right) \\
+    \frac{F_e\left(s\right)}{As + \frac{\rho g}{R}} &= H\left(s\right) \\
+    \frac{1}{As + \frac{\rho g}{R}} &= \frac{H\left(s\right)}{F_e\left(s\right)} \Rightarrow \boxed{G\left(s\right) = \frac{1}{As + \frac{\rho g}{R}}}
+\end{align*}
+
+De esta manera obtenemos obtuvimos la función de transferencia, la principal ventaja de una función de transferencia es la de poder minimizar los componentes de un sistema a ecuaciones algebraicas simples en lugar de utilizar ecuaciones diferenciales complejas para el análisis y diseño de sistemas.
+
+\subsubsection*{Transformada inversa de Laplace y función transferencia}
+
+El uso de la transformada de Laplace en una función transferencia es util para saber cual es el valor de la salida en un momento $y(t)$, dado que:
+
+\begin{align*}
+    G\left(s\right) &= \frac{Y\left(s\right)}{X\left(s\right)}\\
+    Y\left(s\right) &= G\left(s\right)X\left(s\right)\\
+    y\left(t\right) = \mathcal{L}^{-1}\left[Y\left(s\right)\right] &= \mathcal{L}^{-1} \left[G\left(s\right)X\left(s\right)\right]\\
+\end{align*}
+
+\end{document}

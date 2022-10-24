@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{cancel}
+
+\title{Matemática IV - Transformada de Laplace, uso en Teoría de Control}
+\author{
+    Leguina, Damián Adolfo
+    \and
+    Jorge Michelle
+    \and
+    Estaban Ronaldo
+}
+\date{\today}
+
+\begin{document}
+
+\section*{Ley de Kirchoff}
+
+\[
+    L \frac{d I}{d t} + RI + \frac{Q}{C} = E 
+    \qquad\qquad
+    I = \frac{d Q}{d t}
+    \Rightarrow 
+    \boxed{
+        I' = \frac{d^2Q}{d t^2}
+    } = \frac{d I}{ d t}
+\]
+
+\begin{align*}
+    2 \frac{d^2 Q}{d t^2}
+    + 16 \frac{d Q}{d t}
+    + \frac{1}{0,02} Q
+    &= 300 V \\
+    \frac{
+        2 \frac{d^2 Q}{d t^2}
+        + 16 \frac{d Q}{d t} + 50 Q
+        }{2}
+    &= \frac{300 V}{2} \\
+    \frac{d^2 Q}{d t^2}
+    + 8 \frac{d Q}{d t}
+    + 25 Q
+    &= 150 V
+\end{align*}
+
+
+\section*{Aplicando la transformada}
+
+\begin{align*}
+    \mathcal{L}\left[\frac{d^2 Q}{d t^2}\right]
+    + 8 \mathcal{L}\left[\frac{d Q}{d t}\right]
+    + 25 \mathcal{L}\left[Q\right]
+    &= 150 V \mathcal{L}\left[1\right] \\
+    s^2 Q\left(s\right)
+    - \cancelto{0}{Q\left(0\right)}
+    - \cancelto{0}{Q'\left(0\right)}
+    + 8 \left[sQ\left(s\right) - \cancelto{0}{Q\left(0\right)}\right]
+    + 25 Q \left(s\right)
+    &= \frac{150 V}{s} \\
+    Q(s)\left[s^2 + 8 s + 2 s\right] &= \frac{150 V}{s}
+\end{align*}
+
+\begin{align*}
+    Q\left(s\right)\left[s^2 + 8s + 25\right] &= \frac{150v}{s} \\
+    Q\left(s\right) &= \frac{150v}{s\left(s^2 + 8s + 25\right)} \\
+    &= \frac{A}{s} + \frac{Bs + C}{s^2 + 8s + 25}
+\end{align*}
+
+\begin{align*}
+    150V &= A \left(s^2 + 8s + 25\right) + \left(Bs + c\right) s \\
+    &= As^2 + A8s + A25 + Bs^2 + Cs
+\end{align*}
+
+\begin{align*}
+    25A &= 150 \\
+    A &= \frac{150}{25} \rightarrow \boxed{A = 6} \\
+    8A + C &= 0 \\
+    C &= -8A \\
+    &= -8 \times 6 \rightarrow \boxed{C = -48} \\
+    A + B &= 0 \\
+    B &= -A \rightarrow \boxed{B = -6}
+\end{align*}
+
+\begin{align*}
+    Q\left(s\right) &= \frac{6}{s} - \frac{6s + 48}{s^2 + 8s + 25} = \frac{6}{s} - \frac{6s + 48}{\left(s+4\right)^2 + 9} \\
+    \Downarrow \\
+    Q\left(t\right) &= \mathcal{L}^-1 \left[\frac{6}{s} - \frac{6s + 48}{\left(s+4\right)^2 + 9}\right] \\
+\end{align*}
+
+\begin{align*}
+    \boxed{
+        Q\left(t\right) = 6 - 6 e^{4t} cos\left(3t\right) - 8 e^{4t} sen \left(3t\right)
+    }
+\end{align*}
+
+\begin{align*}
+    I = \frac{d Q}{d t} &= \left[6 - 6 e^{4t} cos\left(3t\right) - 8 e^{4t} sen \left(3t\right)\right] \frac{d}{dt} \\
+    &= 6 \frac{d}{dt} - 6 \left[e^{4t} cos\left(3t\right) \frac{d}{dt}\right] - 8 \left[e^{4t} sen \left(3t\right) \frac{d}{dt}\right] \\
+    %&= 0 -6 e^{4t} \left[4 cos \left(3t\right) - 3 sen\left(3t\right)\right] -8 e^{4t} \left[4 sen \left(3t\right) - 3 cos\left(3t\right)\right]
+\end{align*}
+
+\end{document}
+% \mathcal{L}^-1 \left[\right]
+% \[
+%     \mathcal{L}\{f(t)\}=\int_{t=0}^{\infty}f(t)e^{-st}dt
+% \]

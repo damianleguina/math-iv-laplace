@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Transformada de Laplace}{2}{}%
+\contentsline {section}{\numberline {2}Transformada de Laplace Inversa}{3}{}%
+\contentsline {section}{\numberline {3}Ingeniería Mecánica}{4}{}%
+\contentsline {subsection}{\numberline {3.1}relación con la transformada de Laplace}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Ejemplo: Tanque de agua}{4}{}%
