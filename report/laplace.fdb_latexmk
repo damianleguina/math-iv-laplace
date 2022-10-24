@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1666574585 "/home/damianl/ucel/mat_iv/math-iv-laplace/report/laplace.tex" "laplace.pdf" "laplace" 1666574585
+["pdflatex"] 1666615634 "/home/damianl/ucel/mat_iv/math-iv-laplace/report/laplace.tex" "laplace.pdf" "laplace" 1666615634
   "/etc/texmf/web2c/texmf.cnf" 1662560028 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/damianl/ucel/mat_iv/math-iv-laplace/report/laplace.tex" 1666574585 6081 e17fceadb80c4a9670bd0e96a33a5c21 ""
+  "/home/damianl/ucel/mat_iv/math-iv-laplace/report/laplace.tex" 1666615633 6803 3a88ba64de999e68d1b9a81b0a64054f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -30,6 +30,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -70,9 +71,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1662560157 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1662560185 2802259 25de71cd3f43c007740667b2a1425d39 ""
   "images//tank.png" 1666569282 100003 e49d34cca9b777a7ea581bb982e371d7 ""
-  "laplace.aux" 1666574585 620 f1890a601ca231907967a8dd976b4233 "pdflatex"
-  "laplace.tex" 1666574585 6081 e17fceadb80c4a9670bd0e96a33a5c21 ""
-  "laplace.toc" 1666574585 383 65fb4329ef34206cfc5f6f095cbd5d69 "pdflatex"
+  "laplace.aux" 1666615634 620 f1890a601ca231907967a8dd976b4233 "pdflatex"
+  "laplace.tex" 1666615633 6803 3a88ba64de999e68d1b9a81b0a64054f ""
+  "laplace.toc" 1666615634 383 65fb4329ef34206cfc5f6f095cbd5d69 "pdflatex"
   (generated)
   "laplace.aux"
   "laplace.log"

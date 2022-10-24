@@ -78,10 +78,10 @@ En este caso, podemos asumir que el agua acumulada es el cambio del volumen del 
     f_e - f_s = \frac{\Delta V}{\Delta t}
 \end{align*}
 
-El volumen siendo el area $A$ por la altura, asumiendo que el area de la sección transversal es constante, la altura $h$ es la única variable en la función del volumen, por lo que la variación del volumen $\Delta V = A \times d h$, por lo que la ecuación diferencial queda en:
+El volumen siendo el area $A$ por la altura, asumiendo que el area de la sección transversal es constante, la altura $h$ es la única variable en la función del volumen, por lo que la variación del volumen $\Delta V = A \cdot d h$, por lo que la ecuación diferencial queda en:
 
 \begin{align*}
-    f_e - f_s = \frac{A \times d h}{d t} = A \frac{d h}{d t}
+    f_e - f_s = \frac{A \cdot d h}{d t} = A \frac{d h}{d t}
 \end{align*}
 
 \subsubsection*{Flujo de salida}
@@ -136,4 +136,14 @@ El uso de la transformada de Laplace en una función transferencia es util para 
     y\left(t\right) = \mathcal{L}^{-1}\left[Y\left(s\right)\right] &= \mathcal{L}^{-1} \left[G\left(s\right)X\left(s\right)\right]\\
 \end{align*}
 
+Para simplificar, vamos a imaginar que $f_e$ es una entrada tipo impulso unitario, lo que significaría que $F\left(s\right) = 1$.
+
+\begin{align*}
+    H\left(s\right) &= G\left(s\right) \cdot F_e\left(s\right) \\
+    H\left(s\right) &= \frac{1}{As + \frac{\rho g}{R}} \cdot 1 \\
+    H\left(s\right) &= \frac{1}{As + \frac{\rho g}{R}} \cdot \frac{\frac{1}{A}}{\frac{1}{A}} \\
+    H\left(s\right) &= \frac{\frac{1}{A}}{s + \frac{\rho g}{AR}} \\
+    \mathcal{L}^{-1}\left[H\left(s\right)\right] &= \mathcal{L}^{-1}\left[\frac{\frac{1}{A}}{s + \frac{\rho g}{AR}}\right] = \frac{1}{A}\mathcal{L}^{-1}\left[\frac{1}{s + \frac{\rho g}{AR}}\right]\\
+    h\left(t\right) &= \frac{1}{A} \cdot e^{-\frac{\rho g}{AR} t} \\
+\end{align*}
 \end{document}
