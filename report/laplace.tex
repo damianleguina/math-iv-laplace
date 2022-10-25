@@ -4,7 +4,14 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{cancel}
+\usepackage{hyperref}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=blue,
+}
 \graphicspath{ {./images/} }
 
 \title{Matemática IV - Transformada de Laplace, uso en Ingeniería Mecánica}
@@ -146,4 +153,16 @@ Para simplificar, vamos a imaginar que $f_e$ es una entrada tipo impulso unitari
     \mathcal{L}^{-1}\left[H\left(s\right)\right] &= \mathcal{L}^{-1}\left[\frac{\frac{1}{A}}{s + \frac{\rho g}{AR}}\right] = \frac{1}{A}\mathcal{L}^{-1}\left[\frac{1}{s + \frac{\rho g}{AR}}\right]\\
     h\left(t\right) &= \frac{1}{A} \cdot e^{-\frac{\rho g}{AR} t} \\
 \end{align*}
+
+\newpage
+
+\section{Bibliografía}
+
+\begin{description}
+    \item[ECE 209: Review of Circuits as LTI\dots] - Theodore P. Pavlic \href{https://www.tedpavlic.com/teaching/osu/ece209/support/circuits_sys_review.pdf}{[Link]}
+    \item[APPLICATIONS OF LAPLACE\dots] - Prof. L.S. Sawant \href{https://www.irjet.net/archives/V5/i5/IRJET-V5I5593.pdf}{[Link]}
+    \item[Modeling a Process - Filling a Tank] - Gavin Duffy \href{https://eleceng.dit.ie/gavin/Control/Modeling/Filling%20a%20Tank.htm}{[Link]}
+    \item[Transfer Functions (Continuous-Time)] - Dr James E. Pickering \href{https://www.youtube.com/playlist?list=PLWOqcVY--6BeiKryG_5hw0TCAsCde1sBL}{[Link]}
+ \end{description}]
+
 \end{document}
